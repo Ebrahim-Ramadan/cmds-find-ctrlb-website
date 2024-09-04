@@ -27,6 +27,8 @@ export function CommandHistorySearch() {
 
   return (
     <div className="container mx-auto p-2 max-w-3xl">
+      <div class="fixed top-[-25vw] right-[10vw]  w-[100vw] md:w-[100vw] h-[50vh] md:h-[35vw] rotate-[15deg] rounded-[100px] z-0 bg-[#5a2af1] opacity-10"></div>
+
       <h1 className="text-3xl font-bold mb-6">cmds find ctrl+b</h1>
       <div className="mb-6">
         <div className="relative">
