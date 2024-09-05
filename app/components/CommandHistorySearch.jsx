@@ -41,7 +41,7 @@ export function CommandHistorySearch() {
             placeholder="Search command history..."
             value={searchQuery}
             onChange={handleSearchChange}
-            className="pl-10 w-full rounded-lg border px-4 py-2 text-sm text-black  border-neutral-700 bg-transparent text-white placeholder:text-neutral-400"
+            className="pl-10 w-full rounded-lg border px-4 py-2 text-sm text-black  border-neutral-700 bg-transparent text-white placeholder:text-neutral-400 focus:outline-none focus:border-neutral-500"
           />
         </div>
       </div>
@@ -61,7 +61,14 @@ export function CommandHistorySearch() {
         )}
       </div>
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Python Script</h2>
+<div className='flex flex-row items-center justify-between'>
+<h2 className="text-2xl font-semibold mb-4">Tool Script</h2>
+<div className='flex-row flex gap-2 items-center'>
+<div className="w-3 border border-white/10 h-3 rounded-full bg-[#3572A5]"
+></div>
+<p className="text-xs md:text-sm  text-[#3572A5]" >Python</p>
+</div>
+</div>
         <div className="bg-neutral-900 p-4 rounded-lg">
           <pre className="text-sm overflow-x-auto">
             <code>{`

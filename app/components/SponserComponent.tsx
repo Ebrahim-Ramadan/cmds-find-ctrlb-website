@@ -4,7 +4,7 @@ import { useState, useCallback, useRef, useEffect } from 'react'
 
 export default function SponserComponent() {
   const [hearts, setHearts] = useState<{ id: number; x: number; y: number }[]>([])
-  const buttonRef = useRef<HTMLButtonElement>(null)
+  const anchorRef = useRef<HTMLAnchorElement>(null)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const createHeart = useCallback(() => {
@@ -53,15 +53,16 @@ export default function SponserComponent() {
       src='/terminal-svgrepo-com.svg'
       className='w-8'
       />
-      <button 
-        ref={buttonRef}
+      <a 
+        ref={anchorRef}
         onClick={triggerHearts}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="bg-[#1C0E33] text-white hover:bg-primary/90 px-4 py-2 rounded-xl font-semibold"
+        href='https://github.com/Ebrahim-Ramadan/cmds-find-ctrlb'
+        className="cursor-pointer bg-[#1C0E33] text-white hover:bg-primary/90 px-4 py-2 rounded-xl font-semibold"
       >
         Sponser Us
-      </button>
+      </a>
       {hearts.map(heart => (
         <svg
           key={heart.id}
