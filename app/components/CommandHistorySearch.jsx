@@ -8,13 +8,16 @@ export function CommandHistorySearch() {
 
   const debouncedSearch = useCallback(
     debounce((query) => {
-      console.log('Debounced search:', query);  // Log to verify
-      const mockResults = [
-        { shell: 'Bash', command: `grep "${query}" ~/.bash_history` },
-        { shell: 'Zsh', command: `grep "${query}" ~/.zsh_history` },
-        { shell: 'PowerShell', command: `Get-Content (Get-PSReadlineOption).HistorySavePath | Select-String "${query}"` },
-      ];
-      setSearchResults(mockResults);
+      if(query.trim().length>0){
+        // console.log('Debounced search:', query);  // Log to verify
+        const mockResults = [
+          { shell: 'Bash', command: `grep "${query}" ~/.bash_history` },
+          { shell: 'Zsh', command: `grep "${query}" ~/.zsh_history` },
+          { shell: 'PowerShell', command: `Get-Content (Get-PSReadlineOption).HistorySavePath | Select-String "${query}"` },
+        ];
+        setSearchResults(mockResults);
+      }
+      
     }, 350),
     []
   );
@@ -27,7 +30,7 @@ export function CommandHistorySearch() {
 
   return (
     <div className="container mx-auto p-2 max-w-3xl">
-      <div class="fixed top-[-25vw] right-[10vw]  w-[100vw] md:w-[100vw] h-[50vh] md:h-[35vw] rotate-[15deg] rounded-[100px] z-0 bg-[#5a2af1] opacity-10"></div>
+      <div className="fixed top-[-25vw] right-[10vw]  w-[100vw] md:w-[100vw] h-[50vh] md:h-[35vw] rotate-[15deg] rounded-[100px] z-0 bg-[#5a2af1] opacity-10"></div>
 
       <h1 className="text-3xl font-bold mb-6">cmds find ctrl+b</h1>
       <div className="mb-6">
@@ -43,7 +46,7 @@ export function CommandHistorySearch() {
         </div>
       </div>
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Search Results</h2>
+        <h2 className="text-2xl font-semibold mb-4">What To Search</h2>
         {searchResults.length > 0 ? (
           <ul className="space-y-4">
             {searchResults.map((result, index) => (
