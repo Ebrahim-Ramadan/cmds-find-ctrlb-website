@@ -69,8 +69,20 @@ export function CommandHistorySearch() {
 <p className="text-xs md:text-sm  text-[#3572A5]" >Python</p>
 </div>
 </div>
-        <div className="bg-neutral-900 p-4 rounded-lg">
-          <pre className="text-sm overflow-x-auto">
+        <div className="relative w-full bg-neutral-900 rounded-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="absolute h-6 w-6 -left-3 -bottom-3 dark:text-white text-black">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="absolute h-6 w-6 -right-3 -bottom-3 dark:text-white text-black">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6"></path>
+            </svg>
+          <pre className="p-4 relative mx-auto w-full text-sm max-w-full overflow-x-auto">
             <code>{`
 import os
 import re
